@@ -13,8 +13,8 @@ builders:
     applies_builders: ["source_gen|combining_builder"]
     build_extensions: { ".dart": [".x.dart"] }
     auto_apply: dependents
-    build_to: cache
     runs_before: ["json_serializable"]
+    build_to: source
   json_serializable:
     import: "package:json_serializable/builder.dart"
     builder_factories: ["jsonSerializable"]
@@ -23,5 +23,6 @@ builders:
     build_extensions: { ".x.dart": [".g.dart"] }
     auto_apply: dependents
     build_to: cache
+    
    
   
