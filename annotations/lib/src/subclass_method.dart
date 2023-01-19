@@ -1,7 +1,4 @@
-
 class SubclassAnnotation {
-  const SubclassAnnotation();
+  final Type? extendsFrom;
+  const SubclassAnnotation({this.extendsFrom});
 }
-
-
-

@@ -2,9 +2,9 @@
 
 
 import 'package:annotations/annotations.dart';
+import '../../domain/entity/model_entity.dart';
 
 part 'profile_model.g.dart';
 
 @SubclassAnnotation()
-class ProfileModel {
-}
+abstract class ProfileModel extends ModelEntity {}
