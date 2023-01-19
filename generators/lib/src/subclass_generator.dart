@@ -1,13 +1,12 @@
-// ignore_for_file: lines_longer_than_80_chars
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:path/path.dart' as path;
-import 'package:build/src/builder/build_step.dart';
 import 'package:analyzer/dart/element/element.dart';
-import 'package:source_gen/source_gen.dart';
-
 import 'package:annotations/annotations.dart';
+import 'package:build/src/builder/build_step.dart';
+import '../utils/type_to_default.dart';
+import 'package:path/path.dart' as path;
+import 'package:source_gen/source_gen.dart';
 
 import 'model_visitor.dart';
 
@@ -15,13 +14,15 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
   @override
   String generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
+
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
+    
     final classBuffer = StringBuffer();
     final classCodeGenName = '${visitor.className}Gen';
 
     final root = Directory.current.absolute.path;
-    final mainPath = path.join(root, element.librarySource.fullName);
+    final mainPath = path.join(root, element.librarySource?.fullName ?? '');
     final filePath = path.normalize(mainPath);
     final jsonPath = filePath.replaceAll('.dart', '.json');
     final jsonFile = File('../' + jsonPath).readAsStringSync();
@@ -29,7 +30,7 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
 
     // открываем класс
     classBuffer
-        .writeln('class $classCodeGenName extends ${visitor.className} {');
+        .writeln('class $classCodeGenName implements ${visitor.className} {');
 
     // пишем переменные класса
     writeVariables(jsonContent, classBuffer);
@@ -57,42 +58,12 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
 
     map.entries.forEach((element) {
       final type = element.value.runtimeType;
-      final defaultValue = getDefaultStringForType(type);
+      final defaultValue = getDefaultByType(type);
 
       classBufer.writeln('this.${element.key} = $defaultValue,');
     });
     classBufer.writeln('});');
   }
 
-  String getDefaultStringForType(Type type) {
-    print(type);
-    switch (type) {
-      case String:
-        return """''""";
-        break;
-      case int:
-        return '0';
-        break;
-      case double:
-        return '0';
-        break;
-      default:
-        return """''""";
-    }
-  }
-}
 
-void generateGettersAndSetters(ModelVisitor visitor, StringBuffer classBuffer) {
-  for (final field in visitor.fields.keys) {
-    final variable =
-        field.startsWith('_') ? field.replaceFirst('_', '') : field;
-
-    classBuffer.writeln(
-        "${visitor.fields[field]} get $variable => variables['$variable'];");
-
-    classBuffer.writeln('set $variable(${visitor.fields[field]} $variable) {');
-    classBuffer.writeln('super.$field = $variable;');
-    classBuffer.writeln("variables['$variable'] = $variable;");
-    classBuffer.writeln('}');
-  }
 }

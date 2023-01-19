@@ -4,11 +4,11 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   build:
-  source_gen:
+  source_gen: ^1.2.6
   annotations:
     path: ../annotations/
 

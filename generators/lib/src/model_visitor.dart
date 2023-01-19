@@ -2,7 +2,7 @@ import 'package:analyzer/dart/element/visitor.dart';
 import 'package:analyzer/dart/element/element.dart';
 
 class ModelVisitor extends SimpleElementVisitor<void> {
-  String className;
+  String className = '';
   final fields = <String, dynamic>{};
 
   @override
