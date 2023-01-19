@@ -3,5 +3,33 @@
 "surname": "durak",
 "age": 20,
 "surage": 25, 
-"date": "2012-04-23T18:25:43.511Z"
+"date": "2012-04-23T18:25:43.511Z",
+"subclass": {
+    "name": "vasya",
+    "surname": "durak",
+    "noncence": {
+        "name": "vasya",
+        "surname": "durak"
+    },
+    "wtf": {
+        "name": "vasya",
+        "surname": "durak",
+        "yaShasSUmaSoidu1": {
+            "name": "vasya",
+            "surname": "durak",
+            "pizdec": {
+                "name": "vasya",
+                "surname": "durak",
+                "yaShasSUmaSoidu2": {
+                    "name": "vasya",
+                    "surname": "durak"
+                }
+            }
+        }
+    }
+},
+"wtf2": {
+    "name": "vasya",
+    "surname": "durak"
+}
 }

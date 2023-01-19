@@ -8,4 +8,6 @@ part 'profile_model.x.dart';
 part 'profile_model.g.dart';
 
 @SubclassAnnotation()
-abstract class ProfileModel extends ModelEntity {}
+abstract class ProfileModel {
+  const ProfileModel();
+}
