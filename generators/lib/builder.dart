@@ -1,14 +1,10 @@
-// 1  
+
 import 'package:build/build.dart';
-import 'src/extension_generator.dart';
+
 import 'src/subclass_generator.dart';
-// 2
 import 'package:source_gen/source_gen.dart';
 
-// 3
-
-// 4
-Builder generateExtension(BuilderOptions options) =>
-    SharedPartBuilder([ExtensionGenerator()], 'extension_generator');
 Builder generateSubclass(BuilderOptions options) =>
-    SharedPartBuilder([SubclassGenerator()], 'subclass_generator');
+    PartBuilder([SubclassGenerator()], '.x.dart');
+
+  

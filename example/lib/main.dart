@@ -37,12 +37,14 @@ DEALINGS IN THE SOFTWARE. */
 
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const CodeGenExample());
+ 
 }
 
 class CodeGenExample extends StatelessWidget {
-  const CodeGenExample({Key key}) : super(key: key);
+  const CodeGenExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class CodeGenExample extends StatelessWidget {
 }
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key key}) : super(key: key);
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -98,7 +100,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [], 
+              children: [],
             )
           ],
         ),

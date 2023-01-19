@@ -1,15 +1,27 @@
-targets:
-  $default:
-    builders:
-      generators|annotations:
-        enabled: true
+#targets:
+ # $default:
+  #  builders:
+   #   generators|annotations:
+    #    enabled: true
+   
 
 builders:
   generators:
     target: ":generators"
     import: "package:generators/builder.dart"
-    builder_factories: ["generateSubclass", "generateExtension"]
-    build_extensions: { ".dart": [".g.dart"] }
+    builder_factories: ["generateSubclass"]
+    applies_builders: ["source_gen|combining_builder"]
+    build_extensions: { ".dart": [".x.dart"] }
     auto_apply: dependents
     build_to: cache
+    runs_before: ["json_serializable"]
+  json_serializable:
+    import: "package:json_serializable/builder.dart"
+    builder_factories: ["jsonSerializable"]
     applies_builders: ["source_gen|combining_builder"]
+    required_inputs: [".x.dart"]
+    build_extensions: { ".x.dart": [".g.dart"] }
+    auto_apply: dependents
+    build_to: cache
+   
+  

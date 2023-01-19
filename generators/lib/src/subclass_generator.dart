@@ -1,3 +1,4 @@
+// ignore_for_file: lines_longer_than_80_chars
 
 import 'dart:convert';
 import 'dart:io';
@@ -14,10 +15,9 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
   @override
   String generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
-
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
-    
+
     final classBuffer = StringBuffer();
     final classCodeGenName = '${visitor.className}Gen';
 
@@ -28,6 +28,9 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
     final jsonFile = File('../' + jsonPath).readAsStringSync();
     final jsonContent = json.decode(jsonFile) as Map<String, dynamic>;
 
+    // пишем @JsonSerializable()
+    classBuffer.writeln('@JsonSerializable()');
+
     // открываем класс
     classBuffer
         .writeln('class $classCodeGenName implements ${visitor.className} {');
@@ -37,6 +40,9 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
 
     // пишем конструктор класса
     writeConstructor(jsonContent, classBuffer, classCodeGenName);
+
+    // пишем fromJson, toJson
+    wrtiteFromToJson(jsonContent, classBuffer, classCodeGenName);
 
     // закрываем класс
     classBuffer.writeln('}');
@@ -65,5 +71,11 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
     classBufer.writeln('});');
   }
 
-
+  void wrtiteFromToJson(Map<String, dynamic> map, StringBuffer classBufer,
+      String classCodeGenName) {
+    classBufer.writeln(
+        'factory $classCodeGenName.fromJson(Map<String, dynamic> json) => _\$${classCodeGenName}FromJson(json);');
+    classBufer.writeln(
+        'Map<String, dynamic> toJson() => _\$${classCodeGenName}ToJson(this);');
+  }
 }

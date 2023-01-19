@@ -3,20 +3,23 @@
 part of 'profile_model.dart';
 
 // **************************************************************************
-// SubclassGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class ProfileModelGen implements ProfileModel {
-  final String name;
-  final String surname;
-  final int age;
-  final int surage;
-  final String date;
-  const ProfileModelGen({
-    this.name = '',
-    this.surname = '',
-    this.age = 0,
-    this.surage = 0,
-    this.date = '',
-  });
-}
+ProfileModelGen _$ProfileModelGenFromJson(Map<String, dynamic> json) =>
+    ProfileModelGen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      age: json['age'] as int? ?? 0,
+      surage: json['surage'] as int? ?? 0,
+      date: json['date'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$ProfileModelGenToJson(ProfileModelGen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'age': instance.age,
+      'surage': instance.surage,
+      'date': instance.date,
+    };
