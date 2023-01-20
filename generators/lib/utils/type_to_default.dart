@@ -4,6 +4,8 @@ String getDefaultByType(Type type) {
       return """''""";
     case int:
       return '0';
+    case bool:
+      return 'false';
     case double:
       return '0';
     case List:
