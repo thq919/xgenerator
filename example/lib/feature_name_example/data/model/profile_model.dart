@@ -7,7 +7,5 @@ import '../../domain/entity/model_entity.dart';
 part 'profile_model.x.dart';
 part 'profile_model.g.dart';
 
-@SubclassAnnotation()
-abstract class ProfileModel {
-  const ProfileModel();
-}
+@XModelGenerator()
+abstract class ProfileModel {}

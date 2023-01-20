@@ -34,7 +34,11 @@ Map<String, dynamic> _$ProfileModelGenToJson(ProfileModelGen instance) =>
 
 SubclassGen _$SubclassGenFromJson(Map<String, dynamic> json) => SubclassGen(
       name: json['name'] as String? ?? '',
-      surname: json['surname'] as String? ?? '',
+      surname: json['surname'] as bool? ?? false,
+      dcdc: (json['dcdc'] as List<dynamic>?)
+              ?.map((e) => DcdcGen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       noncence: (json['noncence'] as List<dynamic>?)
               ?.map((e) => NoncenceGen.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -48,6 +52,7 @@ Map<String, dynamic> _$SubclassGenToJson(SubclassGen instance) =>
     <String, dynamic>{
       'name': instance.name,
       'surname': instance.surname,
+      'dcdc': instance.dcdc,
       'noncence': instance.noncence,
       'wtf': instance.wtf,
     };
@@ -110,6 +115,16 @@ Map<String, dynamic> _$Yashassumasoidu2GenToJson(
     <String, dynamic>{
       'name': instance.name,
       'surname': instance.surname,
+    };
+
+DcdcGen _$DcdcGenFromJson(Map<String, dynamic> json) => DcdcGen(
+      asdsa: json['asdsa'] as String? ?? '',
+      asdsas: json['asdsas'] as int? ?? 0,
+    );
+
+Map<String, dynamic> _$DcdcGenToJson(DcdcGen instance) => <String, dynamic>{
+      'asdsa': instance.asdsa,
+      'asdsas': instance.asdsas,
     };
 
 NoncenceGen _$NoncenceGenFromJson(Map<String, dynamic> json) => NoncenceGen(

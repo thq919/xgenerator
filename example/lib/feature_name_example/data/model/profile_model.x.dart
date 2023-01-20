@@ -32,12 +32,14 @@ class ProfileModelGen {
 @JsonSerializable()
 class SubclassGen {
   final String name;
-  final String surname;
+  final bool surname;
+  final List<DcdcGen> dcdc;
   final List<NoncenceGen> noncence;
   final WtfGen wtf;
   const SubclassGen({
     this.name = '',
-    this.surname = '',
+    this.surname = false,
+    this.dcdc = const [],
     this.noncence = const [],
     this.wtf = const WtfGen(),
   });
@@ -101,6 +103,19 @@ class Yashassumasoidu2Gen {
   factory Yashassumasoidu2Gen.fromJson(Map<String, dynamic> json) =>
       _$Yashassumasoidu2GenFromJson(json);
   Map<String, dynamic> toJson() => _$Yashassumasoidu2GenToJson(this);
+}
+
+@JsonSerializable()
+class DcdcGen {
+  final String asdsa;
+  final int asdsas;
+  const DcdcGen({
+    this.asdsa = '',
+    this.asdsas = 0,
+  });
+  factory DcdcGen.fromJson(Map<String, dynamic> json) =>
+      _$DcdcGenFromJson(json);
+  Map<String, dynamic> toJson() => _$DcdcGenToJson(this);
 }
 
 @JsonSerializable()

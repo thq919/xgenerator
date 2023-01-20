@@ -1,6 +1,5 @@
 // ignore_for_file: lines_longer_than_80_chars, omit_local_variable_types
 
-
 import 'package:analyzer/dart/element/element.dart';
 import 'package:annotations/annotations.dart';
 import 'package:build/src/builder/build_step.dart';
@@ -11,7 +10,7 @@ import 'package:source_gen/source_gen.dart';
 
 import 'model_visitor.dart';
 
-class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
+class SubclassGenerator extends GeneratorForAnnotation<XModelGenerator> {
   @override
   String generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
@@ -52,7 +51,8 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
     final Map<String, dynamic> mapValuesToValue = <String, dynamic>{};
 
     for (final item in entriesWhereListIsValue) {
-      final entry = MapEntry<String, dynamic>(item.key, (item.value as List).first);
+      final entry =
+          MapEntry<String, dynamic>(item.key, (item.value as List).first);
       mapValuesToValue.addEntries([entry]);
     }
 
@@ -133,7 +133,9 @@ class SubclassGenerator extends GeneratorForAnnotation<SubclassAnnotation> {
     StringBuffer classBufer,
     String classCodeGenName,
   ) {
-    classBufer.writeln('factory $classCodeGenName.fromJson(Map<String, dynamic> json) => _\$${classCodeGenName}FromJson(json);');
-    classBufer.writeln('Map<String, dynamic> toJson() => _\$${classCodeGenName}ToJson(this);');
+    classBufer.writeln(
+        'factory $classCodeGenName.fromJson(Map<String, dynamic> json) => _\$${classCodeGenName}FromJson(json);');
+    classBufer.writeln(
+        'Map<String, dynamic> toJson() => _\$${classCodeGenName}ToJson(this);');
   }
 }

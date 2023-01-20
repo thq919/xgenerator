@@ -1,4 +1,3 @@
-class SubclassAnnotation {
-  
-  const SubclassAnnotation();
+class XModelGenerator {
+  const XModelGenerator();
 }

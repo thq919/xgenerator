@@ -6,7 +6,10 @@
     "date": "2012-04-23T18:25:43.511Z",
     "subclass": {
         "name": "vasya",
-        "surname": "durak",
+        "surname": false,
+        "dcdc": [
+            {"asdsa": "sda", "asdsas": 1}
+        ],
         "noncence": [
             {
                 "name": "vasya",
