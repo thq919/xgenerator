@@ -1,5 +1,4 @@
 String getDefaultByType(Type type) {
-  print(type);
   switch (type) {
     case String:
       return """''""";
@@ -7,6 +6,8 @@ String getDefaultByType(Type type) {
       return '0';
     case double:
       return '0';
+    case List:
+      return 'const []';
     default:
       return """''""";
   }

@@ -28,12 +28,9 @@ final _builders = <_i1.BuilderApplication>[
   ),
   _i1.apply(
     r'generators:generators',
-    [
-      _i4.generateSubclass,
-      _i4.generateExtension,
-    ],
+    [_i4.generateSubclass],
     _i1.toDependentsOf(r'generators'),
-    hideOutput: true,
+    hideOutput: false,
     appliesBuilders: const [r'source_gen:combining_builder'],
   ),
   _i1.apply(
@@ -41,6 +38,7 @@ final _builders = <_i1.BuilderApplication>[
     [_i5.jsonSerializable],
     _i1.toDependentsOf(r'generators'),
     hideOutput: true,
+    appliesBuilders: const [r'source_gen:combining_builder'],
   ),
   _i1.apply(
     r'json_serializable:json_serializable',
