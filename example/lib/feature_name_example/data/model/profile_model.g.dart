@@ -35,9 +35,10 @@ Map<String, dynamic> _$ProfileModelGenToJson(ProfileModelGen instance) =>
 SubclassGen _$SubclassGenFromJson(Map<String, dynamic> json) => SubclassGen(
       name: json['name'] as String? ?? '',
       surname: json['surname'] as String? ?? '',
-      noncence: json['noncence'] == null
-          ? const NoncenceGen()
-          : NoncenceGen.fromJson(json['noncence'] as Map<String, dynamic>),
+      noncence: (json['noncence'] as List<dynamic>?)
+              ?.map((e) => NoncenceGen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       wtf: json['wtf'] == null
           ? const WtfGen()
           : WtfGen.fromJson(json['wtf'] as Map<String, dynamic>),
@@ -49,17 +50,6 @@ Map<String, dynamic> _$SubclassGenToJson(SubclassGen instance) =>
       'surname': instance.surname,
       'noncence': instance.noncence,
       'wtf': instance.wtf,
-    };
-
-NoncenceGen _$NoncenceGenFromJson(Map<String, dynamic> json) => NoncenceGen(
-      name: json['name'] as String? ?? '',
-      surname: json['surname'] as String? ?? '',
-    );
-
-Map<String, dynamic> _$NoncenceGenToJson(NoncenceGen instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'surname': instance.surname,
     };
 
 WtfGen _$WtfGenFromJson(Map<String, dynamic> json) => WtfGen(
@@ -117,6 +107,103 @@ Yashassumasoidu2Gen _$Yashassumasoidu2GenFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$Yashassumasoidu2GenToJson(
         Yashassumasoidu2Gen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+    };
+
+NoncenceGen _$NoncenceGenFromJson(Map<String, dynamic> json) => NoncenceGen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      ohnonono222: (json['ohnonono222'] as List<dynamic>?)
+              ?.map((e) => Ohnonono222Gen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$NoncenceGenToJson(NoncenceGen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'ohnonono222': instance.ohnonono222,
+    };
+
+Ohnonono222Gen _$Ohnonono222GenFromJson(Map<String, dynamic> json) =>
+    Ohnonono222Gen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      ohnonono23322: (json['ohnonono23322'] as List<dynamic>?)
+              ?.map((e) => Ohnonono23322Gen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$Ohnonono222GenToJson(Ohnonono222Gen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'ohnonono23322': instance.ohnonono23322,
+    };
+
+Ohnonono23322Gen _$Ohnonono23322GenFromJson(Map<String, dynamic> json) =>
+    Ohnonono23322Gen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      ohnonono222333: (json['ohnonono222333'] as List<dynamic>?)
+              ?.map(
+                  (e) => Ohnonono222333Gen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$Ohnonono23322GenToJson(Ohnonono23322Gen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'ohnonono222333': instance.ohnonono222333,
+    };
+
+Ohnonono222333Gen _$Ohnonono222333GenFromJson(Map<String, dynamic> json) =>
+    Ohnonono222333Gen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      ohnonono24222: (json['ohnonono24222'] as List<dynamic>?)
+              ?.map((e) => Ohnonono24222Gen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$Ohnonono222333GenToJson(Ohnonono222333Gen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'ohnonono24222': instance.ohnonono24222,
+    };
+
+Ohnonono24222Gen _$Ohnonono24222GenFromJson(Map<String, dynamic> json) =>
+    Ohnonono24222Gen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+      ohnonono2322: (json['ohnonono2322'] as List<dynamic>?)
+              ?.map((e) => Ohnonono2322Gen.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$Ohnonono24222GenToJson(Ohnonono24222Gen instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'surname': instance.surname,
+      'ohnonono2322': instance.ohnonono2322,
+    };
+
+Ohnonono2322Gen _$Ohnonono2322GenFromJson(Map<String, dynamic> json) =>
+    Ohnonono2322Gen(
+      name: json['name'] as String? ?? '',
+      surname: json['surname'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$Ohnonono2322GenToJson(Ohnonono2322Gen instance) =>
     <String, dynamic>{
       'name': instance.name,
       'surname': instance.surname,

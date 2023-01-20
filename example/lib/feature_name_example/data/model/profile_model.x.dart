@@ -33,30 +33,17 @@ class ProfileModelGen {
 class SubclassGen {
   final String name;
   final String surname;
-  final NoncenceGen noncence;
+  final List<NoncenceGen> noncence;
   final WtfGen wtf;
   const SubclassGen({
     this.name = '',
     this.surname = '',
-    this.noncence = const NoncenceGen(),
+    this.noncence = const [],
     this.wtf = const WtfGen(),
   });
   factory SubclassGen.fromJson(Map<String, dynamic> json) =>
       _$SubclassGenFromJson(json);
   Map<String, dynamic> toJson() => _$SubclassGenToJson(this);
-}
-
-@JsonSerializable()
-class NoncenceGen {
-  final String name;
-  final String surname;
-  const NoncenceGen({
-    this.name = '',
-    this.surname = '',
-  });
-  factory NoncenceGen.fromJson(Map<String, dynamic> json) =>
-      _$NoncenceGenFromJson(json);
-  Map<String, dynamic> toJson() => _$NoncenceGenToJson(this);
 }
 
 @JsonSerializable()
@@ -114,6 +101,94 @@ class Yashassumasoidu2Gen {
   factory Yashassumasoidu2Gen.fromJson(Map<String, dynamic> json) =>
       _$Yashassumasoidu2GenFromJson(json);
   Map<String, dynamic> toJson() => _$Yashassumasoidu2GenToJson(this);
+}
+
+@JsonSerializable()
+class NoncenceGen {
+  final String name;
+  final String surname;
+  final List<Ohnonono222Gen> ohnonono222;
+  const NoncenceGen({
+    this.name = '',
+    this.surname = '',
+    this.ohnonono222 = const [],
+  });
+  factory NoncenceGen.fromJson(Map<String, dynamic> json) =>
+      _$NoncenceGenFromJson(json);
+  Map<String, dynamic> toJson() => _$NoncenceGenToJson(this);
+}
+
+@JsonSerializable()
+class Ohnonono222Gen {
+  final String name;
+  final String surname;
+  final List<Ohnonono23322Gen> ohnonono23322;
+  const Ohnonono222Gen({
+    this.name = '',
+    this.surname = '',
+    this.ohnonono23322 = const [],
+  });
+  factory Ohnonono222Gen.fromJson(Map<String, dynamic> json) =>
+      _$Ohnonono222GenFromJson(json);
+  Map<String, dynamic> toJson() => _$Ohnonono222GenToJson(this);
+}
+
+@JsonSerializable()
+class Ohnonono23322Gen {
+  final String name;
+  final String surname;
+  final List<Ohnonono222333Gen> ohnonono222333;
+  const Ohnonono23322Gen({
+    this.name = '',
+    this.surname = '',
+    this.ohnonono222333 = const [],
+  });
+  factory Ohnonono23322Gen.fromJson(Map<String, dynamic> json) =>
+      _$Ohnonono23322GenFromJson(json);
+  Map<String, dynamic> toJson() => _$Ohnonono23322GenToJson(this);
+}
+
+@JsonSerializable()
+class Ohnonono222333Gen {
+  final String name;
+  final String surname;
+  final List<Ohnonono24222Gen> ohnonono24222;
+  const Ohnonono222333Gen({
+    this.name = '',
+    this.surname = '',
+    this.ohnonono24222 = const [],
+  });
+  factory Ohnonono222333Gen.fromJson(Map<String, dynamic> json) =>
+      _$Ohnonono222333GenFromJson(json);
+  Map<String, dynamic> toJson() => _$Ohnonono222333GenToJson(this);
+}
+
+@JsonSerializable()
+class Ohnonono24222Gen {
+  final String name;
+  final String surname;
+  final List<Ohnonono2322Gen> ohnonono2322;
+  const Ohnonono24222Gen({
+    this.name = '',
+    this.surname = '',
+    this.ohnonono2322 = const [],
+  });
+  factory Ohnonono24222Gen.fromJson(Map<String, dynamic> json) =>
+      _$Ohnonono24222GenFromJson(json);
+  Map<String, dynamic> toJson() => _$Ohnonono24222GenToJson(this);
+}
+
+@JsonSerializable()
+class Ohnonono2322Gen {
+  final String name;
+  final String surname;
+  const Ohnonono2322Gen({
+    this.name = '',
+    this.surname = '',
+  });
+  factory Ohnonono2322Gen.fromJson(Map<String, dynamic> json) =>
+      _$Ohnonono2322GenFromJson(json);
+  Map<String, dynamic> toJson() => _$Ohnonono2322GenToJson(this);
 }
 
 @JsonSerializable()
