@@ -11,8 +11,6 @@ dependencies:
   source_gen: ^1.2.6
   annotations:
     path: ../annotations/
-  json_serializable: 
-  json_annotation: 
 
 dev_dependencies:
   build_test:

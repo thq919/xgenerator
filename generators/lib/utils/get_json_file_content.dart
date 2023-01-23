@@ -8,7 +8,7 @@ Map<String, dynamic> getJsonFromDartNameOfClass(Element element) {
   final mainPath = path.join(root, element.librarySource?.fullName ?? '');
   final filePath = path.normalize(mainPath);
   final jsonPath = filePath.replaceAll('.dart', '.json');
-  final jsonFile = File('../' + jsonPath).readAsStringSync();
+  final jsonFile = File(('../' + jsonPath).replaceAll('//', '/')).readAsStringSync();
   final jsonContent = json.decode(jsonFile) as Map<String, dynamic>;
   return jsonContent;
 }

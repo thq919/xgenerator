@@ -9,20 +9,11 @@ builders:
   generators:
     target: ":generators"
     import: "package:generators/builder.dart"
-    builder_factories: ["generateSubclass"]
+    builder_factories: ["generateModel","generateEntity"]
     applies_builders: ["source_gen|combining_builder"]
-    build_extensions: { ".dart": [".x.dart"] }
+    build_extensions: { ".dart": [".m.dart"] }
     auto_apply: dependents
-    runs_before: ["json_serializable"]
     build_to: source
-  json_serializable:
-    import: "package:json_serializable/builder.dart"
-    builder_factories: ["jsonSerializable"]
-    applies_builders: ["source_gen|combining_builder"]
-    required_inputs: [".x.dart"]
-    build_extensions: { ".x.dart": [".g.dart"] }
-    auto_apply: dependents
-    build_to: cache
-    
+
    
   
