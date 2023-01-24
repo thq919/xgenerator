@@ -10,7 +10,7 @@ import 'package:source_gen/source_gen.dart';
 
 import 'model_visitor.dart';
 
-class EntityGenerator extends GeneratorForAnnotation<XModelGenerator> {
+class EntityGenerator extends GeneratorForAnnotation<GemGenerator> {
   @override
   String generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
@@ -36,7 +36,11 @@ class EntityGenerator extends GeneratorForAnnotation<XModelGenerator> {
     Map<String, dynamic> jsonContent,
   ) {
     generateClass(classBuffer, classCodeGenName, visitor, jsonContent);
-    generateRecurcivelyObjectFields(jsonContent, classBuffer, visitor);
+    generateRecurcivelyObjectFields(
+      jsonContent,
+      classBuffer,
+      visitor,
+    );
   }
 
   void generateRecurcivelyObjectFields(
@@ -137,7 +141,7 @@ class EntityGenerator extends GeneratorForAnnotation<XModelGenerator> {
     });
     classBuffer.writeln(' }) {');
     classBuffer.writeln('return $classCodeGenName(');
-   
+
     map.entries.forEach((element) {
       classBuffer
           .writeln('${element.key}: ${element.key} ?? this.${element.key},');

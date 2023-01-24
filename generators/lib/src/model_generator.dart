@@ -10,7 +10,7 @@ import 'package:source_gen/source_gen.dart';
 
 import 'model_visitor.dart';
 
-class ModelGenerator extends GeneratorForAnnotation<XModelGenerator> {
+class ModelGenerator extends GeneratorForAnnotation<GemGenerator> {
   @override
   String generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
@@ -156,7 +156,6 @@ class ModelGenerator extends GeneratorForAnnotation<XModelGenerator> {
     StringBuffer classBufer,
     String classCodeName,
   ) {
-    
     classBufer.writeln(
         'factory $classCodeName.fromJson(Map<String, dynamic> json) => _\$${classCodeName}FromJson(json);');
     classBufer.writeln('@override');

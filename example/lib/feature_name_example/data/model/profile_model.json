@@ -4,65 +4,6 @@
     "age": 20,
     "surage": 25,
     "date": "2012-04-23T18:25:43.511Z",
-    "subclass": {
-        "name": "vasya",
-        "surname": false,
-        "dcdc": [
-            {"asdsa": "sda", "asdsas": 1}
-        ],
-        "noncence": [
-            {
-                "name": "vasya",
-                "surname": "durak",
-                "ohnonono222": [
-                    {
-                        "name": "vasya",
-                        "surname": "durak",
-                        "ohnonono23322": [
-                            {
-                                "name": "vasya",
-                                "surname": "durak",
-                                "ohnonono222333": [
-                                    {
-                                        "name": "vasya",
-                                        "surname": "durak",
-                                        "ohnonono24222": [
-                                            {
-                                                "name": "vasya",
-                                                "surname": "durak",
-                                                "ohnonono2322": [
-                                                    {
-                                                        "name": "vasya",
-                                                        "surname": "durak"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "wtf": {
-            "name": "vasya",
-            "surname": "durak",
-            "yaShasSUmaSoidu1": {
-                "name": "vasya",
-                "surname": "durak",
-                "pizdec": {
-                    "name": "vasya",
-                    "surname": "durak",
-                    "yaShasSUmaSoidu2": {
-                        "name": "vasya",
-                        "surname": "durak"
-                    }
-                }
-            }
-        }
-    },
     "wtf2": {
         "name": "vasya",
         "surname": "durak"

@@ -1,3 +1,3 @@
-class XModelGenerator {
-  const XModelGenerator();
+class GemGenerator {
+  const GemGenerator();
 }
